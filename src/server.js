@@ -1,14 +1,12 @@
 const express = require("express")
 
 const app = express()
+app.use(express.json())
 
-app.get("/profile/:id/:name", (request, response) => {
-  const { id, name } = request.params
+app.post("/users", (request, response) => {
+  const { name, email, password } = request.body
 
-  response.send(`
-  ID number: ${id}.
-  User name: ${name}
-  `)
+  response.json({ name, email, password })
 })
 
 const PORT = 3333
