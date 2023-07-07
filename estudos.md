@@ -9,3 +9,15 @@
   `)
 })
 ```
+
+```js
+  /* USO DE MIDDLEWARE */
+  function myMiddleware(request, response, next) {
+
+  if (!request.body.isAdmin) {
+    return response.send({ message: "User unauthorized" })
+  }
+
+  next()
+}
+```
