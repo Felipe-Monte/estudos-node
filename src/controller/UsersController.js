@@ -5,7 +5,7 @@ class UsersController {
     const { name, email, password } = request.body
 
     if (!name) {
-      throw new AppError("Name is invalid")
+      throw new AppError("Name is require")
     }
 
     response.json({ name, email, password })
